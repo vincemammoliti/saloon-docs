@@ -6,6 +6,7 @@ To get started, change your method to **POST, PUT or PATCH** depending on the re
 
 use Saloon\Http\Request;
 use Saloon\Contracts\Body\HasBody;
+use Saloon\Enums\Method;
 
 <strong>class CreateServerRequest extends Request implements HasBody
 </strong>{
