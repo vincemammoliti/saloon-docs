@@ -53,12 +53,12 @@ use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 class WarehouseConnector extends Connector
 {
     use ClientCredentialsGrant;
-    
+
     public function resolveBaseUrl(): string
     {
         return 'https://local-warehouse.app';
     }
-    
+
     protected function defaultOauthConfig(): OAuthConfig
     {
         return OAuthConfig::make()
@@ -92,13 +92,13 @@ use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 class WarehouseConnector extends Connector
 {
     use ClientCredentialsGrant;
-    
+
     public function __construct(string $clientId, string $clientSecret)
     {
         $this->oauthConfig()->setClientId($clientId);
         $this->oauthConfig()->setClientSecret($clientSecret);
     }
-    
+
     // ...
 }
 ```

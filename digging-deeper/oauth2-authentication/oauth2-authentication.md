@@ -69,7 +69,7 @@ class SpotifyConnector extends Connector
     public function resolveBaseUrl(): string
     {
         // Spotify's API has a different base URL for OAuth2 auth.
-    
+
         return 'https://api.spotify.com/v1';
     }
 
@@ -108,13 +108,13 @@ use Saloon\Traits\OAuth2\AuthorizationCodeGrant;
 class SpotifyConnector extends Connector
 {
     use AuthorizationCodeGrant;
-    
+
 <strong>    public function __construct(string $clientId, string $clientSecret)
 </strong>    {
         $this->oauthConfig()->setClientId($clientId);
         $this->oauthConfig()->setClientSecret($clientSecret);
     }
-    
+
     // ...
 }
 </code></pre>
@@ -218,7 +218,7 @@ $authenticator = $connector->getAccessToken($code);
 
 // Securely store this against your user.
 
-$serialized = $authenticator->serialize(); 
+$serialized = $authenticator->serialize();
 
 // Unserialize the authenticator when retrieving it
 
@@ -258,7 +258,7 @@ if ($authenticator->hasExpired()) {
     // We'll refresh the access token which will return a new authenticator
     // which we can store against our user in our application.
 
-    $authenticator = $connector->refreshAccessToken($authenticator);    
+    $authenticator = $connector->refreshAccessToken($authenticator);
     $user->updateAuthenticator($authenticator);
 }
 
@@ -380,12 +380,12 @@ class SpotifyConnector extends Connector
     {
         return new CustomGetAccessTokenRequest($code, $oauthConfig);
     }
-    
+
     protected function resolveRefreshTokenRequest(OAuthConfig $oauthConfig, string $refreshToken): Request
     {
         return new CustomGetRefreshTokenRequest($oauthConfig, $refreshToken);
     }
-    
+
     protected function resolveUserRequest(OAuthConfig $oauthConfig): Request
     {
         return new CustomGetUserRequest($oauthConfig);
