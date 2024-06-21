@@ -344,21 +344,21 @@ protected function defaultOauthConfig(): OAuthConfig
         ->setClientSecret('my-client-secret')
         ->setRedirectUri('https://my-app.saloon.dev/auth/callback')
         ->setRequestModifier(function (Request $request) {
-             // This callback is invoked on every request, so you
-             // may want to use if-statements or a match statement
-             // to apply conditions based on request.
+            // This callback is invoked on every request, so you
+            // may want to use if-statements or a match statement
+            // to apply conditions based on request.
 
-             if ($request instanceof GetAccessTokenRequest) {
-                 $request->query()->add('access_type', 'offline');
-             }
-             
-             if ($request instanceof GetRefreshTokenRequest) {
-                 $request->headers()->add('X-App-Key', $appKey);
-             }
-             
-             if ($request instanceof GetUserRequest) {
-                 $request->headers('Accept', 'text/plain');
-             }
+            if ($request instanceof GetAccessTokenRequest) {
+                $request->query()->add('access_type', 'offline');
+            }
+
+            if ($request instanceof GetRefreshTokenRequest) {
+                $request->headers()->add('X-App-Key', $appKey);
+            }
+
+            if ($request instanceof GetUserRequest) {
+                $request->headers('Accept', 'text/plain');
+            }
         }),
 }
 ```
