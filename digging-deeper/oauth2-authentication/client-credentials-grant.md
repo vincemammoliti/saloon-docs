@@ -64,7 +64,7 @@ class WarehouseConnector extends Connector
         return OAuthConfig::make()
             ->setClientId('my-client-id')
             ->setClientSecret('my-client-secret')
-	    ->setDefaultScopes(['inventory.read'])
+            ->setDefaultScopes(['inventory.read'])
             ->setTokenEndpoint('/oauth/token')
             ->setRequestModifier(function (Request $request) {
                 // Optional: Modify the requests being sent.
@@ -226,8 +226,8 @@ protected function defaultOauthConfig(): OAuthConfig
     return OAuthConfig::make()
         ->setClientId('my-client-id')
         ->setClientSecret('my-client-secret')
-<strong>	->setRequestModifier(function (GetClientCredentialsTokenRequest $request) {
-</strong><strong>	     //
+<strong>        ->setRequestModifier(function (GetClientCredentialsTokenRequest $request) {
+</strong><strong>            //
 </strong><strong>        )},
 </strong>}
 </code></pre>

@@ -78,9 +78,9 @@ class SpotifyConnector extends Connector
         return OAuthConfig::make()
             ->setClientId('my-client-id')
             ->setClientSecret('my-client-secret')
-	    ->setDefaultScopes(['user-read-currently-playing'])
+            ->setDefaultScopes(['user-read-currently-playing'])
             ->setRedirectUri('https://my-app.saloon.dev/auth/callback')
-	    ->setAuthorizeEndpoint('https://accounts.spotify.com/authorize')
+            ->setAuthorizeEndpoint('https://accounts.spotify.com/authorize')
             ->setTokenEndpoint('https://accounts.spotify.com/api/token')
             ->setUserEndpoint('/me')
             ->setRequestModifier(function (Request $request) {
@@ -343,11 +343,11 @@ protected function defaultOauthConfig(): OAuthConfig
         ->setClientId('my-client-id')
         ->setClientSecret('my-client-secret')
         ->setRedirectUri('https://my-app.saloon.dev/auth/callback')
-	->setRequestModifier(function (Request $request) {
-	     // This callback is invoked on every request, so you 
-	     // may want to use if-statements or a match statement
-	     // to apply conditions based on request.
-	
+        ->setRequestModifier(function (Request $request) {
+             // This callback is invoked on every request, so you
+             // may want to use if-statements or a match statement
+             // to apply conditions based on request.
+
              if ($request instanceof GetAccessTokenRequest) {
                  $request->query()->add('access_type', 'offline');
              }
