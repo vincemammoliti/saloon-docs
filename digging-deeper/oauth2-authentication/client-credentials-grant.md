@@ -215,7 +215,7 @@ $connector->getAccessToken(requestModifier: function (Request $request) {
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="All Requests" %}
 <pre class="language-php"><code class="lang-php">&#x3C;?php
 
 use Saloon\Http\Request;
