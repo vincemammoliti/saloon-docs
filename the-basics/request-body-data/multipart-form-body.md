@@ -131,11 +131,11 @@ If you would like to also have a multipart body on your connector, you can add t
 use Saloon\Http\Connector;
 use Saloon\Data\MultipartValue;
 use Saloon\Contracts\Body\HasBody;
-use Saloon\Traits\Body\HasMultipartValue;
+use Saloon\Traits\Body\HasMultipartBody;
 
 class ForgeConnector extends Connector implements HasBody
 {
-    use HasMultipartValue;
+    use HasMultipartBody;
 
     protected function defaultBody(): array
     {
