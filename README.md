@@ -1,7 +1,5 @@
 ---
 description: Build beautiful API integrations and SDKs with Saloon
-cover: .gitbook/assets/2023-02-01 19.05.14.jpg
-coverY: 0
 ---
 
 # 🤠 Saloon
