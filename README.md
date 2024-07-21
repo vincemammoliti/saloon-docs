@@ -17,3 +17,7 @@ Saloon is a PHP library that helps you rapidly build third party API integration
 * Allows you to record real requests in your tests so you have accurate testing data for your assertions.
 * Works in any PHP framework, or just regular PHP applications (with Composer)
 * Comes with powerful plugins to handle caching, rate limits, data transfer objects, XML, and more
+
+{% content-ref url="the-basics/installation.md" %}
+[installation.md](the-basics/installation.md)
+{% endcontent-ref %}

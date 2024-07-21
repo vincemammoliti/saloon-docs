@@ -9,7 +9,7 @@
 
 ## The Basics
 
-* [👋 Installation](the-basics/installation.md)
+* [⬇️ Installation](the-basics/installation.md)
 * [🔌 Connectors](the-basics/connectors.md)
 * [✉️ Requests](the-basics/requests.md)
 * [🔐 Authentication](the-basics/authentication.md)

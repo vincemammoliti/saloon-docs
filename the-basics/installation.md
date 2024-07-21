@@ -1,4 +1,4 @@
-# 👋 Installation
+# ⬇️ Installation
 
 To get started with Saloon, you will need to install it through [Composer](https://getcomposer.org/).&#x20;
 
