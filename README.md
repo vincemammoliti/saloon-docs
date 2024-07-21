@@ -1,33 +1,21 @@
 ---
 description: Build beautiful API integrations and SDKs with Saloon
+cover: .gitbook/assets/2023-02-01 19.05.14.jpg
+coverY: 0
 ---
 
 # 🤠 Saloon
 
-<figure><img src=".gitbook/assets/header.png" alt=""><figcaption></figcaption></figure>
-
-### Introduction
-
-Saloon is a PHP library that gives you the tools to build beautifully simple API integrations and SDKs. Saloon moves your API requests into reusable classes so you can keep all your API configurations in one place. Saloon comes with many exciting features out of the box like recording requests in your tests, caching, OAuth2 and pagination. It's a great starting point for building simple, standardised API integrations in your application.
+Saloon is a PHP library that helps you rapidly build third party API integrations or SDKs. It's configured to be production-ready by default, offers a simple, standardised development flow for your whole team and has utilities to help test your API integrations before you ship to production. Saloon is loved by thousands of developers and downloaded over 2 million times.
 
 [![Build Status](https://github.com/saloonphp/saloon/actions/workflows/tests.yml/badge.svg)](https://img.shields.io/github/actions/workflow/status/saloonphp/saloon/tests.yml?label=tests)![](https://img.shields.io/packagist/dm/saloonphp/saloon)![](https://img.shields.io/github/stars/saloonphp/saloon)
 
-### Key Features
-
-* Provides a simple, easy-to-learn, and modern way to build clean, reusable API integrations
-* Built on top of Guzzle, the most popular and feature-rich HTTP client
-* Works great within a team as it provides a standard everyone can follow
-* Great for building your next PHP SDK or library
-* Packed full of features like request recording, request concurrency, caching, data-transfer-object support, and full Laravel support.
-* Framework agnostic
-* Lightweight and has few dependencies.
-
-{% embed url="https://github.com/saloonphp/saloon" fullWidth="false" %}
-Please consider giving Saloon a star on GitHub!
-{% endembed %}
-
 <figure><img src=".gitbook/assets/Introducing Saloon v3.png" alt=""><figcaption><p>Introducing Saloon v3</p></figcaption></figure>
 
-{% content-ref url="the-basics/installation.md" %}
-[installation.md](the-basics/installation.md)
-{% endcontent-ref %}
+### Key Features
+
+* Lightweight, only depends on one library - Guzzle.
+* Offers "Connector" and "Request" classes to encapsulate API integrations into files
+* Allows you to record real requests in your tests so you have accurate testing data for your assertions.
+* Works in any PHP framework, or just regular PHP applications (with Composer)
+* Comes with powerful plugins to handle caching, rate limits, data transfer objects, XML, and more
