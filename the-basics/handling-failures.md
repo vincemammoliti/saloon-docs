@@ -61,6 +61,7 @@ SaloonException
     │   └── GatewayTimeoutException (504)
     └── ClientException (4xx)
         ├── UnauthorizedException (401)
+        ├── PaymentRequiredException (402)
         ├── ForbiddenException (403)
         ├── NotFoundException (404)
         ├── MethodNotAllowedException (405)
