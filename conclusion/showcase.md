@@ -136,5 +136,13 @@ Want to add your application or SDK to Saloon's showcase page? Edit this page on
          <td></td>
          <td><a href="https://github.com/NoahNxT/laravel-open-holidays-api">https://github.com/NoahNxT/laravel-open-holidays-api</a></td>
        </tr>
+        <tr>
+         <td>💰</td>
+         <td>njoguamos/laravel-pesapal</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td><a href="https://github.com/njoguamos/laravel-pesapal">https://github.com/njoguamos/laravel-pesapal</a></td>
+       </tr>
    </tbody>
 </table>
