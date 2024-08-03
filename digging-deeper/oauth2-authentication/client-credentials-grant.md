@@ -53,18 +53,18 @@ use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 class WarehouseConnector extends Connector
 {
     use ClientCredentialsGrant;
-    
+
     public function resolveBaseUrl(): string
     {
         return 'https://local-warehouse.app';
     }
-    
+
     protected function defaultOauthConfig(): OAuthConfig
     {
         return OAuthConfig::make()
             ->setClientId('my-client-id')
             ->setClientSecret('my-client-secret')
-	    ->setDefaultScopes(['inventory.read'])
+            ->setDefaultScopes(['inventory.read'])
             ->setTokenEndpoint('/oauth/token')
             ->setRequestModifier(function (Request $request) {
                 // Optional: Modify the requests being sent.
@@ -92,13 +92,13 @@ use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 class WarehouseConnector extends Connector
 {
     use ClientCredentialsGrant;
-    
+
     public function __construct(string $clientId, string $clientSecret)
     {
         $this->oauthConfig()->setClientId($clientId);
         $this->oauthConfig()->setClientSecret($clientSecret);
     }
-    
+
     // ...
 }
 ```
@@ -215,7 +215,7 @@ $connector->getAccessToken(requestModifier: function (Request $request) {
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="All Requests" %}
 <pre class="language-php"><code class="lang-php">&#x3C;?php
 
 use Saloon\Http\Request;
@@ -226,8 +226,8 @@ protected function defaultOauthConfig(): OAuthConfig
     return OAuthConfig::make()
         ->setClientId('my-client-id')
         ->setClientSecret('my-client-secret')
-<strong>	->setRequestModifier(function (GetClientCredentialsTokenRequest $request) {
-</strong><strong>	     //
+<strong>        ->setRequestModifier(function (GetClientCredentialsTokenRequest $request) {
+</strong><strong>            //
 </strong><strong>        )},
 </strong>}
 </code></pre>

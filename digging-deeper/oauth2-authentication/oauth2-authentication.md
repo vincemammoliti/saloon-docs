@@ -69,7 +69,7 @@ class SpotifyConnector extends Connector
     public function resolveBaseUrl(): string
     {
         // Spotify's API has a different base URL for OAuth2 auth.
-    
+
         return 'https://api.spotify.com/v1';
     }
 
@@ -78,9 +78,9 @@ class SpotifyConnector extends Connector
         return OAuthConfig::make()
             ->setClientId('my-client-id')
             ->setClientSecret('my-client-secret')
-	    ->setDefaultScopes(['user-read-currently-playing'])
+            ->setDefaultScopes(['user-read-currently-playing'])
             ->setRedirectUri('https://my-app.saloon.dev/auth/callback')
-	    ->setAuthorizeEndpoint('https://accounts.spotify.com/authorize')
+            ->setAuthorizeEndpoint('https://accounts.spotify.com/authorize')
             ->setTokenEndpoint('https://accounts.spotify.com/api/token')
             ->setUserEndpoint('/me')
             ->setRequestModifier(function (Request $request) {
@@ -108,13 +108,13 @@ use Saloon\Traits\OAuth2\AuthorizationCodeGrant;
 class SpotifyConnector extends Connector
 {
     use AuthorizationCodeGrant;
-    
+
 <strong>    public function __construct(string $clientId, string $clientSecret)
 </strong>    {
         $this->oauthConfig()->setClientId($clientId);
         $this->oauthConfig()->setClientSecret($clientSecret);
     }
-    
+
     // ...
 }
 </code></pre>
@@ -218,7 +218,7 @@ $authenticator = $connector->getAccessToken($code);
 
 // Securely store this against your user.
 
-$serialized = $authenticator->serialize(); 
+$serialized = $authenticator->serialize();
 
 // Unserialize the authenticator when retrieving it
 
@@ -258,7 +258,7 @@ if ($authenticator->hasExpired()) {
     // We'll refresh the access token which will return a new authenticator
     // which we can store against our user in our application.
 
-    $authenticator = $connector->refreshAccessToken($authenticator);    
+    $authenticator = $connector->refreshAccessToken($authenticator);
     $user->updateAuthenticator($authenticator);
 }
 
@@ -343,22 +343,22 @@ protected function defaultOauthConfig(): OAuthConfig
         ->setClientId('my-client-id')
         ->setClientSecret('my-client-secret')
         ->setRedirectUri('https://my-app.saloon.dev/auth/callback')
-	->setRequestModifier(function (Request $request) {
-	     // This callback is invoked on every request, so you 
-	     // may want to use if-statements or a match statement
-	     // to apply conditions based on request.
-	
-             if ($request instanceof GetAccessTokenRequest) {
-                 $request->query()->add('access_type', 'offline');
-             }
-             
-             if ($request instanceof GetRefreshTokenRequest) {
-                 $request->headers()->add('X-App-Key', $appKey);
-             }
-             
-             if ($request instanceof GetUserRequest) {
-                 $request->headers('Accept', 'text/plain');
-             }
+        ->setRequestModifier(function (Request $request) {
+            // This callback is invoked on every request, so you
+            // may want to use if-statements or a match statement
+            // to apply conditions based on request.
+
+            if ($request instanceof GetAccessTokenRequest) {
+                $request->query()->add('access_type', 'offline');
+            }
+
+            if ($request instanceof GetRefreshTokenRequest) {
+                $request->headers()->add('X-App-Key', $appKey);
+            }
+
+            if ($request instanceof GetUserRequest) {
+                $request->headers('Accept', 'text/plain');
+            }
         }),
 }
 ```
@@ -380,12 +380,12 @@ class SpotifyConnector extends Connector
     {
         return new CustomGetAccessTokenRequest($code, $oauthConfig);
     }
-    
+
     protected function resolveRefreshTokenRequest(OAuthConfig $oauthConfig, string $refreshToken): Request
     {
         return new CustomGetRefreshTokenRequest($oauthConfig, $refreshToken);
     }
-    
+
     protected function resolveUserRequest(OAuthConfig $oauthConfig): Request
     {
         return new CustomGetUserRequest($oauthConfig);
